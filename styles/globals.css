@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[data-slate-editor="true"] {
+    @apply px-6 pt-6;
+}
+[data-slate-editor="true"] > * + * {
+    @apply mt-3;
+}
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: rgb(75, 85, 99);
+    color: #fbfbfb;
+    font-size: 150%;
+    position: absolute;
+    padding: 1px 10px 5px 10px;
+    bottom: 0;
+    left: 110%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    z-index: 99999;
+    visibility: hidden;
+    border-radius: 10px;
+}
+[data-title] {
+    position: relative;
+}
+
+/* base層 default設定 */
+@layer base {
+    * {
+        @apply p-0 m-0 box-border;
+    }
+    a {
+        @apply underline text-blue-700 cursor-pointer;
+    }
+    textarea {
+        @apply leading-6;
+    }
+    p,
+    li {
+        @apply text-xl;
+    }
+    li {
+        @apply mt-3;
+    }
+    u {
+        @apply underline;
+    }
+    h1 {
+        @apply text-6xl font-bold;
+    }
+    h2 {
+        @apply text-4xl font-bold;
+    }
+    h3 {
+        @apply text-3xl font-bold;
+    }
+    ul {
+        @apply list-disc list-inside;
+    }
+    ol {
+        @apply list-decimal list-inside;
+    }
+
+    input:focus {
+        outline: 0;
+        border-color: blue;
+    }
+    blockquote {
+        border-left: 2px solid #ddd;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 10px;
+        color: #929191;
+        font-style: italic;
+        @apply text-2xl;
+    }
+    blockquote[dir='rtl'] {
+        border-left: none;
+        padding-left: 0;
+        padding-right: 10px;
+        border-right: 2px solid #ddd;
+    }
+    code {
+        font-family: monospace;
+        font-size: larger;
+    }
+    :not(pre) > code {
+        font-family: monospace;
+        background-color: #eee;
+        padding: 3px;
+    }
+}
+
+
+@layer utilities {
+    .-top-10000 {
+        top: -10000px;
+    }
+    .-left-10000 {
+        left: -10000px;
+    }
+    .max-h-20em {
+        max-height: 20em;
+    }
+    .w-unset {
+        width: unset;
+    }
+    .text-input {
+        box-sizing: border-box;
+        font-size: 0.85em;
+        width: 100%;
+        padding: 0.5em;
+        border: 2px solid #ddd;
+        background: #fafafa;
+    }
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
