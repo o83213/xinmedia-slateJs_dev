@@ -2,7 +2,7 @@ import React from 'react';
 import { BlockButton, InsertImageButton, InsertEditableCardButton, UploadImageButton, EmbedButton } from '../components';
 function SideToolbar() {
     return (
-        <div className='flex z-10 bg-gray-600  rounded fixed py-1 px-1 left-28'>
+        <div className='flex z-20 bg-gray-600  rounded fixed py-1 px-1 left-48 '>
             <div className='flex flex-col '>
                 <BlockButton format='heading-two' icon='h_plus_mobiledata' title='H2標籤' />
                 <BlockButton format='heading-three' icon='h_mobiledata' title='H3標籤' />
